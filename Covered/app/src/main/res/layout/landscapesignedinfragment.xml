@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@color/grey">
+
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:id="@+id/radioGroup"
+        android:layout_below="@+id/textView10"
+        android:layout_alignParentEnd="true">
+
+        <RadioButton
+            android:text="Destination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="74dp"
+            android:layout_marginTop="0dp"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:id="@+id/radioButton"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+        <RadioButton
+        android:text="Home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:id="@+id/radioButton2"
+            android:textColor="@color/black"
+        android:layout_below="@+id/radioButton"
+        android:layout_alignStart="@+id/radioButton" />
+
+        <RadioButton
+            android:text="Present Location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:id="@+id/radioButton3"
+            android:textColor="@color/black"
+            android:layout_below="@+id/radioButton"
+            android:layout_alignStart="@+id/radioButton"/>
+
+    </RadioGroup>
+
+    <TextView
+        android:text="Choose to view \n current weather at:"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:textSize="18dp"
+        android:textStyle="italic"
+        android:id="@+id/textView10"
+        android:textColor="@color/black"
+        android:layout_marginTop="18dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/radioGroup" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/humidity_field"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:layout_below="@+id/details_field"
+        android:layout_alignStart="@+id/details_field" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:id="@+id/pressure_field"
+        android:layout_below="@+id/humidity_field"
+        android:layout_alignStart="@+id/humidity_field" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/updated_field"
+        android:textSize="14dp"
+        android:textStyle="bold|italic"
+        android:textColor="@color/black"
+        android:layout_alignEnd="@+id/city_field"
+        android:layout_alignTop="@+id/textView10" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40dp"
+        android:textStyle="bold|italic"
+        android:textColor="@color/black"
+        android:id="@+id/weather_icon"
+        android:layout_below="@+id/textView10"
+        android:layout_alignStart="@+id/city_field" />
+
+    <TextView
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/current_temperature_field"
+        android:textColor="@color/black"
+        android:layout_marginTop="27dp"
+        android:layout_below="@+id/radioGroup"
+        android:layout_alignStart="@+id/updated_field" />
+
+    <TextView
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/details_field"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/current_temperature_field"
+        android:layout_alignStart="@+id/current_temperature_field" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14dp"
+        android:textStyle="bold|italic"
+        android:textColor="@color/black"
+        android:id="@+id/city_field"
+        android:layout_marginStart="73dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+
+
+
+</RelativeLayout>

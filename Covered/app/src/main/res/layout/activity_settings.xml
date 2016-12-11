@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context="com.website.covered.SettingsActivity">
+
+    <RelativeLayout
+        android:id="@+id/activity_settings"
+        android:layout_width="match_parent"
+        android:layout_height="510dp"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
+
+        <TextView
+            android:text="HOME"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:id="@+id/textView7" />
+
+        <TextView
+            android:text="Home Address"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="20dp"
+            android:id="@+id/homeAddress"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:text="0.0"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@+id/textView11"
+            android:id="@+id/lat1Text"
+            android:layout_alignStart="@+id/homeAddress"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"/>
+
+        <TextView
+            android:text="HH:MM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView15"
+            android:layout_alignStart="@+id/lat1Text"
+          android:id="@+id/alarmTimeHome" />
+
+        <TextView
+            android:text="Destination Address"
+            android:id="@+id/destAddress"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
+            android:layout_alignBaseline="@+id/textView16"
+            android:layout_alignBottom="@+id/textView16"
+            android:layout_alignStart="@+id/alarmTimeHome" />
+
+        <TextView
+            android:text="Lng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView19"
+            android:textStyle="bold"
+            android:layout_alignBaseline="@+id/textView18"
+            android:layout_alignBottom="@+id/textView18"
+            android:layout_alignStart="@+id/textView11" />
+
+        <TextView
+            android:text="0.0"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@+id/textView19"
+            android:layout_alignStart="@+id/destAddress"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:id="@+id/lat2Text" />
+
+        <TextView
+            android:text="0.0"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@+id/lat2Text"
+            android:layout_toEndOf="@+id/lat1Text"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:id="@+id/long2Text" />
+
+        <TextView
+            android:text="LEAVE WORK AROUND"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:id="@+id/textView17"
+            android:textStyle="bold"
+            android:layout_below="@+id/textView18"
+            android:layout_alignStart="@+id/textView18" />
+
+        <TextView
+            android:text="HH:MM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView17"
+            android:layout_alignStart="@+id/lat2Text"
+            android:id="@+id/alarmTimeDest" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@color/common_google_signin_btn_text_dark_focused"
+            android:layout_below="@+id/textView17"
+            android:layout_alignStart="@+id/textView17"
+            android:layout_marginTop="0dp"
+            android:paddingTop="5dp"
+            android:id="@+id/imageView6" />
+
+        <TextView
+            android:text="REPEAT ALARM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView6"
+            android:layout_alignStart="@+id/imageView6"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:id="@+id/textView14" />
+
+        <Switch
+            android:text="Weekdays Only"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/weekdaysSwitch"
+            android:layout_below="@+id/everydayAlarm"
+            android:layout_alignStart="@+id/everydayAlarm" />
+
+        <CheckBox
+            android:text="W"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/weekdaysSwitch"
+            android:layout_toEndOf="@+id/t"
+            android:id="@+id/w" />
+
+        <CheckBox
+            android:text="Th"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/weekdaysSwitch"
+            android:layout_toEndOf="@+id/w"
+            android:id="@+id/th" />
+
+        <CheckBox
+            android:text="F"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/th"
+            android:layout_toEndOf="@+id/th"
+            android:id="@+id/f" />
+
+        <CheckBox
+            android:text="S"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/f"
+            android:layout_toEndOf="@+id/f"
+            android:id="@+id/sat" />
+
+        <CheckBox
+            android:text="Sun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/sat"
+            android:layout_toEndOf="@+id/sat"
+            android:id="@+id/s" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@color/common_google_signin_btn_text_dark_focused"
+            android:paddingTop="5dp"
+            android:id="@+id/imageView7"
+            android:layout_above="@+id/button3"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:text="Lng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:id="@+id/textView11"
+            android:layout_above="@+id/textView15"
+            android:layout_toEndOf="@+id/textView7" />
+
+        <TextView
+            android:text="0.0"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:id="@+id/long1Text"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:layout_below="@+id/homeAddress"
+            android:layout_toEndOf="@+id/lat1Text"
+            android:layout_marginTop="33dp" />
+
+        <TextView
+            android:text="Lat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:id="@+id/textView9"
+            android:layout_alignBaseline="@+id/long1Text"
+            android:layout_alignBottom="@+id/long1Text"
+            android:layout_alignStart="@+id/textView7" />
+
+        <TextView
+            android:text="LEAVE HOME AROUND"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:textStyle="bold"
+            android:id="@+id/textView15"
+            android:layout_below="@+id/textView9"
+            android:layout_alignStart="@+id/textView9" />
+
+        <TextView
+            android:text="DESTINATION"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:id="@+id/textView16"
+            android:textStyle="bold"
+            android:layout_below="@+id/imageView2"
+            android:layout_alignStart="@+id/imageView2" />
+
+        <TextView
+            android:text="Lat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:id="@+id/textView18"
+            android:layout_below="@+id/destAddress"
+            android:layout_marginTop="22dp"
+            android:layout_alignStart="@+id/textView16" />
+
+        <CheckBox
+            android:text="M"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/m"
+            android:layout_below="@+id/weekdaysSwitch"
+            android:layout_toStartOf="@+id/textView19" />
+
+        <CheckBox
+            android:text="T"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/t"
+            android:layout_alignBaseline="@+id/m"
+            android:layout_alignBottom="@+id/m"
+            android:layout_toEndOf="@+id/m" />
+
+        <Button
+            android:text="SET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button3"
+            android:onClick="saveAlarm"
+            android:layout_below="@+id/w"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="13dp" />
+
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_action_name"
+            android:id="@+id/button4"
+            android:onClick="showHelpDialog"
+            android:layout_alignTop="@+id/button3"
+            android:layout_alignParentEnd="true" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@color/common_google_signin_btn_text_dark_focused"
+            android:paddingTop="5dp"
+            android:id="@+id/imageView2"
+            android:layout_marginTop="11dp"
+            android:layout_below="@+id/alarmTimeHome"
+            android:layout_alignParentStart="true" />
+
+        <Switch
+            android:text="Everyday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/everydayAlarm"
+            android:layout_below="@+id/textView14"
+            android:layout_alignParentStart="true" />
+
+
+    </RelativeLayout>
+
+</ScrollView>
+

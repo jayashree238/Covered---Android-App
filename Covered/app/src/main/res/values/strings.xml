@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Covered</string>
+    <string name="author_name">Jayashree Prabunathan</string>
+    <string name="webiste">www.covered.com/help</string>
+    <string name="copyright">Copyright © 2016 Jayashree Prabunathan</string>
+    <string name="tag_line">Optimize What You Carry</string>
+    <string name="version">Version 1.0</string>
+    <string name="temperature">Temperature</string>
+</resources>
