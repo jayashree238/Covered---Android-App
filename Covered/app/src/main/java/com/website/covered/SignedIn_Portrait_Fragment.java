@@ -15,6 +15,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -30,6 +31,7 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 import android.app.AlertDialog;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -69,6 +71,9 @@ public class SignedIn_Portrait_Fragment extends Fragment implements CompoundButt
     String homeLongitude;
     private String imageUri = null;
     RelativeLayout layout;
+
+    public static final String PREFS_NAME = "AOP_PREFS";
+    public static final String PREFS_KEY = "AOP_PREFS_String";
 //    File imageFile;
 
     private static final int SELECT_PICTURE = 1;
@@ -104,6 +109,20 @@ public class SignedIn_Portrait_Fragment extends Fragment implements CompoundButt
             layout.setBackground(d);
         }
         
+
+        //Retrieve from SharedPreferences
+        SharedPreferences settings2;
+        String text;
+        settings2 = getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE); //1
+        text = settings2.getString(PREFS_KEY, null); //2
+        byte[] imageAsBytes;
+        if(text != null) {
+            imageAsBytes = Base64.decode(text.getBytes(), 0);
+            Bitmap bitmap2 = BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length);
+            Drawable d = new BitmapDrawable(getResources(), bitmap2);
+            layout.setBackground(d);
+        }
+        //End SharedPreferences
 
         nameText = (TextView) v.findViewById(R.id.nameText);
         settings = (ImageView) v.findViewById(R.id.settings);
@@ -150,6 +169,23 @@ public class SignedIn_Portrait_Fragment extends Fragment implements CompoundButt
                 imageUri = getPathFromURI(imageUriTemp);
                 final InputStream imageStream = getContext().getContentResolver().openInputStream(imageUriTemp);
                 final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
+
+                //Using SharedPreferences to store Background
+
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                selectedImage.compress(Bitmap.CompressFormat.PNG, 100, baos); //bm is the bitmap object
+                byte[] b = baos.toByteArray();
+                String encoded = Base64.encodeToString(b, Base64.DEFAULT);
+                SharedPreferences settings;
+                SharedPreferences.Editor editor;
+                settings = getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE); //1
+                editor = settings.edit(); //2
+
+                editor.putString(PREFS_KEY, encoded); //3
+                editor.commit(); //4
+
+                //End use of SharedPreferences
+
 
                 dataHelper.insertBackground(selectedImage);
                 Drawable d = new BitmapDrawable(getResources(), selectedImage);
