@@ -1,5 +1,5 @@
 # Covered
-Android Application that allows you to set Alarms to remind you to take the right things (Umbrella, Coat, Scarf, Gloves, etc) before you leaving, according to the Weather outside.
+Android Application that allows you to set Alarms to remind you to take the right things (Umbrella, Coat, Scarf, Gloves, etc) before you leave, according to the Weather outside.
 
 Technical Requirements (5 Points)
 # Demonstrate your proficiency in mobile user interface
